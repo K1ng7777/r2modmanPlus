@@ -3,6 +3,10 @@ html {
     background-color: $scheme-background;
 }
 
+body {
+    position: relative;
+}
+
 body.body--dark {
     color: $scheme-text;
 }
@@ -51,7 +55,7 @@ select {
 // custom
 .menu {
     display: block;
-    padding: 1em;
+    padding: 1em 0 1em 1em;
     position: sticky;
     top: 0;
 
@@ -127,9 +131,9 @@ select {
 
 .row-card {
     background-color: rgba(255, 255, 255, 0);
-    margin: 0 1em 4px 0;
     transition: background-color 0.2s, box-shadow 0.2s linear;
     border-bottom: 1px solid $scheme-border;
+    margin: 0 0 4px;
 
     &--expanded {
         border-bottom-width: 0;
@@ -322,12 +326,6 @@ select[disabled] {
     color: gray;
 }
 
-[data-tooltip]::before {
-    max-width: 90vw !important;
-    width: max-content !important;
-    white-space: pre-wrap !important;
-}
-
 .ql-editor {
     counter-reset: line;
     padding-left: 0;
@@ -357,6 +355,14 @@ code {
 
     &--half-width {
         margin-right: 0.5rem;
+    }
+}
+
+.margin-left {
+    margin-left: 1em;
+
+    &--half-width {
+        margin-left: 0.5rem;
     }
 }
 

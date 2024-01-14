@@ -10,6 +10,11 @@ const { configure } = require('quasar/wrappers');
 
 module.exports = configure(function(/* ctx */) {
     return {
+        // https://v1.quasar.dev/quasar-cli/quasar-conf-js#property-sourcefiles
+        sourceFiles: {
+            rootComponent: 'src/AppWrapper.vue'
+        },
+
         // https://quasar.dev/quasar-cli/supporting-ts
         supportTS: true,
 
@@ -20,9 +25,9 @@ module.exports = configure(function(/* ctx */) {
         // --> boot files are part of "main.js"
         // https://quasar.dev/quasar-cli/boot-files
         boot: [
-
             'i18n',
-            'axios'
+            'axios',
+            'floating-vue'  // Tooltips
         ],
 
         // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css

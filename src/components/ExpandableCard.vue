@@ -14,12 +14,12 @@
                         <slot name='other-icons'></slot>
                         <!-- Allow movement of mod order -->
                         <a v-if='showSort' class='card-header-icon handle'>
-                            <i class="fas fa-grip-vertical"></i>
+                            <i class="fas fa-grip-vertical" v-tooltip.left="'Drag to reorder'"></i>
                         </a>
                         <a class='card-header-icon'>
                             <span class='icon'>
-                                <i class='fas fa-angle-right' aria-hidden='true' v-if='!visible'></i>
-                                <i class='fas fa-angle-down' aria-hidden='true' v-if='visible'></i>
+                                <i class='fas fa-angle-right' aria-hidden='true' v-if='!visible' v-tooltip.left="'Expand'"></i>
+                                <i class='fas fa-angle-down' aria-hidden='true' v-if='visible' v-tooltip.left="'Collapse'"></i>
                             </span>
                         </a>
                     </header>
@@ -64,15 +64,6 @@
         @Prop({default: false})
         showSort: boolean | undefined;
 
-        @Prop({default: false})
-        manualSortUp: boolean | undefined;
-
-        @Prop({default: false})
-        manualSortDown: boolean | undefined;
-
-        @Prop({default: false})
-        darkTheme: boolean | undefined;
-
         @Prop({default: true})
         enabled: boolean | undefined;
 
@@ -97,3 +88,10 @@
         }
     }
 </script>
+
+
+<style lang="scss" scoped>
+.card-header-title {
+    word-break: break-all;
+}
+</style>
